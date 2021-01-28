@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carga',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CargaPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+    setTimeout(() => {
+      this.router.navigate(['/login'])
+    }, 3000);
+   }
 
   ngOnInit() {
   }

@@ -1,5 +1,19 @@
-.container-img {
-    display: flexbox;
-    margin-left: auto;
-    margin-right: auto;
+.vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+ion-img {
+    width: 150px;
+    height: 150px;
+}
+
+ion-label {
+    font-size: 24pt;
+}
+
+ion-content {
+    --background: linear-gradient( #1d976c, #93f9b9);
 }

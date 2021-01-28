@@ -1,0 +1,35 @@
+<ion-content>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-img src="/assets/img/perrito.png"></ion-img>
+            <ion-card-title>Iniciar Sesión</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+
+                    <ion-label position="floating">
+                        <ion-icon name="mail-outline"></ion-icon> Correo Electrónico</ion-label>
+                    <ion-input type="email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">
+                        <ion-icon name="lock-closed-outline"></ion-icon> Contraseña</ion-label>
+                    <ion-input type="password"></ion-input>
+                </ion-item>
+            </ion-list>
+            <div class="center">
+                <ion-button shape="round" size="default">
+                    <ion-icon slot="start" name="navigate-outline"></ion-icon>
+                    Enviar
+                </ion-button>
+                <hr>
+                <a routerLink="/register">Registarse</a>
+            </div>
+
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
