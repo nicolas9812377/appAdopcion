@@ -9,9 +9,9 @@ import { NavigationExtras, Router } from '@angular/router';
   selector: 'app-fundaciones',
   templateUrl: './fundaciones.page.html',
   styleUrls: ['./fundaciones.page.scss'],
-})
+}) 
 export class FundacionesPage implements OnInit {
-
+     
   
   fundaciones:any
   textoBUscar='';

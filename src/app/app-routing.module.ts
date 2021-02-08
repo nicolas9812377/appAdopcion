@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: 'perros-por-fundacion',
     loadChildren: () => import('./paginas/perros-por-fundacion/perros-por-fundacion.module').then( m => m.PerrosPorFundacionPageModule)
-  },
+  }, 
 ];
 
 @NgModule({
