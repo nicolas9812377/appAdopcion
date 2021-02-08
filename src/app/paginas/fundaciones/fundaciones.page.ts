@@ -35,7 +35,7 @@ export class FundacionesPage implements OnInit {
         fundacion:JSON.stringify(param)
       }
     }
-    
+    console.log(extras)
     this.router.navigate(["/perros-por-fundacion"],extras);
   }
 

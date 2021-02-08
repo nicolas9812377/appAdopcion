@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/perros"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{data.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="data.img" />
+    <ion-card-header>
+      <ion-card-title>{{data.historia}}</ion-card-title>
+      <ion-card-subtitle>Edad: {{data.edad}} </ion-card-subtitle>
+      <ion-card-subtitle>Requisitos: {{data.requisitos}} </ion-card-subtitle>
+      <ion-card-subtitle>Discapacidad: {{data.discapacidades}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+
+     
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
