@@ -20,7 +20,7 @@ export class FundacionesPage implements OnInit {
   ngOnInit() {
     this.DatosServicio.getFundaciones()
     .subscribe(
-      (data)=>{this.fundaciones = data.fundacion ;},
+      (data)=>{this.fundaciones = data.fundacion ;},         
       (error)=>{console.error(error);}
     )
   }
@@ -35,7 +35,7 @@ export class FundacionesPage implements OnInit {
         fundacion:JSON.stringify(param)
       }
     }
-    
+    console.log(extras)
     this.router.navigate(["/perros-por-fundacion"],extras);
   }
 

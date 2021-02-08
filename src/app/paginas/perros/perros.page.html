@@ -1,0 +1,26 @@
+<ion-header >
+  <ion-toolbar>
+   <ion-buttons slot="start">
+     <ion-back-button defaultHref="/"></ion-back-button>
+   </ion-buttons>
+   <ion-title>DOG LOF</ion-title>
+ </ion-toolbar>
+ <ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
+</ion-header>
+
+
+
+<ion-content>
+<ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let perro of perros | filtro: textoBUscar">
+        <ion-card (click)="queryParams(perro)">
+          <ion-img [src]="perro.img"  style="border-radius: 2px"></ion-img>
+          <ion-card-content >
+            <ion-label><h3>{{perro.nombre}}</h3></ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>
