@@ -38,6 +38,14 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./paginas/tabs/tabs.module').then( m => m.TabsPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./paginas/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'configuraciones',
+    loadChildren: () => import('./paginas/configuraciones/configuraciones.module').then( m => m.ConfiguracionesPageModule)
+  },
 
   
 

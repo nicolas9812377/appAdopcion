@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PerrosService } from '../../services/perros.service';
 import { NavigationExtras, Router } from '@angular/router';
 import { FundacionesService } from '../../services/fundaciones.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-perros',
@@ -12,13 +13,19 @@ export class PerrosPage implements OnInit {
   perros:any;
   fundaciones = [];
   textoBUscar='';
-  constructor(private DataService:PerrosService,private fundacionS:FundacionesService,private router:Router) { }
-
- async ngOnInit() {
+  constructor(private DataService:PerrosService,private fundacionS:FundacionesService,private router:Router,
+    private menu: MenuController) { }
+  
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+  }
+ 
+  async ngOnInit() {
     this.fundacionS.getFundaciones().subscribe(
       (data)=>{
         // console.log(data.fundacion);
-        data.fundacion.forEach(async(element,index) => {
+        data["fundacion"].forEach(async(element,index) => {
           await this.fundacionS.getPerrosFundaciones(element._id).subscribe(
             async (dat)=>{
               await this.fundaciones.push({element,dat}); 

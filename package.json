@@ -24,6 +24,7 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.0.0",
     "@ionic/storage": "^2.3.1",
+    "color": "^3.1.3",
     "constants": "0.0.2",
     "cordova-browser": "6.0.0",
     "nodemailer": "^6.4.17",

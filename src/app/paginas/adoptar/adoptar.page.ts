@@ -60,11 +60,11 @@ export class AdoptarPage implements OnInit {
       data => {
         console.log(data);
         this.alertService.presentToast("Su adopcion se esta procesando");
-        this.navCtrl.navigateRoot('/perros');
+        this.navCtrl.navigateRoot('/tabs/perros');
       },
       error => {
         this.alertService.presentToast("Su adopcion se esta procesando");
-        this.navCtrl.navigateRoot('/perros');
+        this.navCtrl.navigateRoot('/tabs/perros');
         console.log(error);
       }
     );

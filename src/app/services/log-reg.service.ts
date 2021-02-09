@@ -18,11 +18,11 @@ export class LogRegService {
     ).pipe(
       tap(token => {
         console.log(token);
-        this.storage.set('nombre', token.usuario.nombre)
-        this.storage.set('apellido', token.usuario.apellido)
-        this.storage.set('email', token.usuario.email)
-        this.storage.set('id', token.usuario._id)
-        this.storage.set('token', token.token)
+        this.storage.set('nombre', token["usuario"]["nombre"])
+        this.storage.set('apellido', token["usuario"]["apellido"])
+        this.storage.set('email', token["usuario"]["email"])
+        this.storage.set('id', token["usuario"]["_id"])
+        this.storage.set('token', token["token"])
         .then( 
           () => {
             console.log('Token Stored'); 

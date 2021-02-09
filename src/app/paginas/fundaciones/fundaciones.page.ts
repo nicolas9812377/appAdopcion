@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { EROFS } from 'constants';
-import { Observable } from 'rxjs';
-import { threadId } from 'worker_threads';
 import { FundacionesService } from '../../services/fundaciones.service';
 import { NavigationExtras, Router } from '@angular/router';
 
@@ -20,7 +17,7 @@ export class FundacionesPage implements OnInit {
   ngOnInit() {
     this.DatosServicio.getFundaciones()
     .subscribe(
-      (data)=>{this.fundaciones = data.fundacion ;},         
+      (data)=>{this.fundaciones = data["fundacion"] ;},         
       (error)=>{console.error(error);}
     )
   }

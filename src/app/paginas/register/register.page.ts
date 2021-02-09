@@ -23,7 +23,7 @@ export class RegisterPage implements OnInit {
       data => {
         this.authService.login(form.value.email, form.value.password).subscribe(
           data => {
-            this.alertService.presentToast("Bienvenido "+JSON.stringify(data.usuario));
+            this.alertService.presentToast("Bienvenido "+JSON.stringify(data["usuario"]));
           },
           error => {
             console.log(error);

@@ -24,7 +24,7 @@ export class PerrosPorFundacionPage implements OnInit {
 
     this.DatosServicio.getPerrosFundaciones(this.data._id)
     .subscribe(
-      (data)=>{this.perros = data.perroBD;},
+      (data)=>{this.perros = data["perroBD"];},
       (error)=>{console.error(error);}
     )
   }
