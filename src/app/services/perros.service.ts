@@ -12,9 +12,16 @@ export class PerrosService {
   public getPerros(){
     return this.http.get(this.env.API_URL+"/perros");
   }
+
+  public postAdoptar(emailF: String, nombreF: String , nombre: String, apellido: String, idPerro: String, correoP: String){
+    console.log("casi envio");  
+    return this.http.post(this.env.API_URL+"/adoptar",{emailF:emailF, nombreF:nombreF , nombre:nombre, apellido:apellido, idPerro:idPerro, correoP:correoP});
+  } 
   
   public getPerrosInf(infID){
-    return this.http.get(this.env.API_URL+"/perros/"+infID);
+    return this.http.get(this.env.API_URL+"/perros/"+infID);  
   }
+
+  
  
 }

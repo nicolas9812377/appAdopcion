@@ -25,10 +25,12 @@ export class LoginPage implements OnInit {
         this.alertService.presentToast("Bienvenido "+JSON.stringify(data.usuario));
       },
       error => {
+        this.alertService.presentToast("Error en credenciales");
+        this.navCtrl.navigateRoot('/login');
         console.log(error);
       },
       () => {
-        this.navCtrl.navigateRoot('/');
+        this.navCtrl.navigateRoot('/perros');
       }
     );
   }

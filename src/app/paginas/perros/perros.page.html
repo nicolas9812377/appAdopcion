@@ -1,26 +1,34 @@
-<ion-header >
-  <ion-toolbar>
-   <ion-buttons slot="start">
-     <ion-back-button defaultHref="/"></ion-back-button>
-   </ion-buttons>
-   <ion-title>DOG LOF</ion-title>
- </ion-toolbar>
- <ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>DOG LOF</ion-title>
+    </ion-toolbar>
+    <ion-searchbar animated (ionChange)="buscar($event)" placeholder="Buscar"></ion-searchbar>
 </ion-header>
 
 
 
 <ion-content>
-<ion-grid>
-    <ion-row>
-      <ion-col *ngFor="let perro of perros | filtro: textoBUscar">
-        <ion-card (click)="queryParams(perro)">
-          <ion-img [src]="perro.img"  style="border-radius: 2px"></ion-img>
-          <ion-card-content >
-            <ion-label><h3>{{perro.nombre}}</h3></ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      </ion-row>
-  </ion-grid>
+    <ion-list>
+        <ion-item *ngFor="let funda of fundaciones">
+            <ion-grid>
+                <ion-row>
+                    <h3 style="font-weight: bold;">{{funda.element.nombre}} - {{funda.element.provincia}} - {{funda.element.ciudad}}</h3>
+                </ion-row>
+                <ion-row>
+                    <ion-slides pager="true">
+                        <ion-slide *ngFor="let perro of funda.dat.perroBD | filtro: textoBUscar">
+                            <ion-card (click)="queryParams(perro)">
+                                <ion-img [src]="perro.img" style="border-radius: 10px !important"></ion-img>
+                                <ion-card-header>
+                                    <ion-card-title>{{perro.nombre}} </ion-card-title>
+                                    <ion-card-subtitle>{{perro.edad}}</ion-card-subtitle>
+                                </ion-card-header>
+                            </ion-card>
+                        </ion-slide>
+                    </ion-slides>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+
 </ion-content>
