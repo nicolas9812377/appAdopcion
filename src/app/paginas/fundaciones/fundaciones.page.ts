@@ -17,7 +17,7 @@ export class FundacionesPage implements OnInit {
   ngOnInit() {
     this.DatosServicio.getFundaciones()
     .subscribe(
-      (data)=>{this.fundaciones = data["fundacion"] ;},         
+      (data)=>{this.fundaciones = data["fundacion"] ; console.log(data["fundacion"]);},         
       (error)=>{console.error(error);}
     )
   }

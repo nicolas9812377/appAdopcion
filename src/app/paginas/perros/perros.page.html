@@ -20,7 +20,9 @@
                     <ion-slides pager="true">
                         <ion-slide *ngFor="let perro of funda.dat.perroBD | filtro: textoBUscar">
                             <ion-card (click)="queryParams(perro)">
-                                <ion-img [src]="perro.img" style="border-radius: 10px !important; height: 100%;"></ion-img>
+
+                                <ion-img [src]="perro.img" style="border-radius: 10px !important;"></ion-img>
+
                                 <ion-card-header>
                                     <ion-card-title>{{perro.nombre}} </ion-card-title>
                                     <ion-card-subtitle>{{perro.edad}}</ion-card-subtitle>
