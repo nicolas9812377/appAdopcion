@@ -1,25 +1,27 @@
-<app-header titulo="Fundaciones">
-</app-header>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Fundaciones</ion-title>
+    </ion-toolbar>
+</ion-header>
 
 
 <ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let fundacion of fundaciones | filtro: textoBUscar">
-      <ion-card (click)="queryParams(fundacion)">
-        <ion-card-header>
-          <ion-card-title >{{fundacion.nombre}}</ion-card-title>
-          <ion-card-subtitle >{{fundacion.email}}</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content >
-          {{fundacion.direccion}}
-          <img [src]="fundacion.img">
-        </ion-card-content>
-      </ion-card>
+    <ion-list>
+        <ion-item *ngFor="let fundacion of fundaciones | filtro: textoBUscar">
+            <ion-card (click)="queryParams(fundacion)">
+                <ion-card-header>
+                    <ion-card-title>{{fundacion.nombre}}</ion-card-title>
+                    <ion-card-subtitle>{{fundacion.email}}</ion-card-subtitle>
+                </ion-card-header>
 
-      
-    </ion-item>
-</ion-list>
+                <ion-card-content>
+                    {{fundacion.direccion}}
+                    <img [src]="fundacion.img">
+                </ion-card-content>
+            </ion-card>
+
+
+        </ion-item>
+    </ion-list>
 </ion-content>
-<app-footer></app-footer>

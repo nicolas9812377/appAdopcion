@@ -10,6 +10,7 @@ import { PerrosPage } from './perros.page';
 
 import { PipesModule } from '../../pipes/pipes.module';
 import { ComponentesModule } from '../../componentes/componentes.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -19,8 +20,9 @@ import { ComponentesModule } from '../../componentes/componentes.module';
     IonicModule,
     PerrosPageRoutingModule,
     PipesModule,
-    ComponentesModule
-  ],
+    ComponentesModule,
+    RouterModule.forChild([{ path: '', component: PerrosPage }])
+  ], 
   declarations: [PerrosPage]
 })
 export class PerrosPageModule {}

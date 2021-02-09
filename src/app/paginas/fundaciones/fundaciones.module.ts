@@ -9,6 +9,7 @@ import { FundacionesPageRoutingModule } from './fundaciones-routing.module';
 import { FundacionesPage } from './fundaciones.page';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ComponentesModule } from '../../componentes/componentes.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ComponentesModule } from '../../componentes/componentes.module';
     IonicModule,
     FundacionesPageRoutingModule,
     PipesModule,
-    ComponentesModule
+    ComponentesModule,
+    RouterModule.forChild([{ path: '', component: FundacionesPage }])
   ],
   declarations: [FundacionesPage]
 })

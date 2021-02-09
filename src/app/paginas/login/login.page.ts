@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
         console.log(error);
       },
       () => {
-        this.navCtrl.navigateRoot('/perros');
+        this.navCtrl.navigateRoot('/tabs');
       }
     );
   }

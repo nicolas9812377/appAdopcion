@@ -34,7 +34,14 @@ const routes: Routes = [
   {
     path: 'adoptar',
     loadChildren: () => import('./paginas/adoptar/adoptar.module').then( m => m.AdoptarPageModule)
+  },  {
+    path: 'tabs',
+    loadChildren: () => import('./paginas/tabs/tabs.module').then( m => m.TabsPageModule)
   },
+
+  
+
+
 ];
 
 

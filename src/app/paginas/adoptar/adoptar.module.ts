@@ -8,6 +8,7 @@ import { AdoptarPageRoutingModule } from './adoptar-routing.module';
 
 import { AdoptarPage } from './adoptar.page';
 import { ComponentesModule } from '../../componentes/componentes.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ComponentesModule } from '../../componentes/componentes.module';
     FormsModule,
     IonicModule,
     AdoptarPageRoutingModule,
-    ComponentesModule
+    ComponentesModule,
+    RouterModule.forChild([{ path: '', component: AdoptarPage }])
   ],
   declarations: [AdoptarPage]
 })

@@ -29,7 +29,7 @@ export class FundacionesPage implements OnInit {
     this.textoBUscar = event.detail.value;
   }
 
-  queryParams(param){
+  public queryParams(param){
     const extras: NavigationExtras={
       queryParams:{
         fundacion:JSON.stringify(param)
