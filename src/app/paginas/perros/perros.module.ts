@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -9,6 +9,8 @@ import { PerrosPageRoutingModule } from './perros-routing.module';
 import { PerrosPage } from './perros.page';
 
 import { PipesModule } from '../../pipes/pipes.module';
+import { ComponentesModule } from '../../componentes/componentes.module';
+
 
 @NgModule({
   imports: [
@@ -16,7 +18,8 @@ import { PipesModule } from '../../pipes/pipes.module';
     FormsModule,
     IonicModule,
     PerrosPageRoutingModule,
-    PipesModule
+    PipesModule,
+    ComponentesModule
   ],
   declarations: [PerrosPage]
 })

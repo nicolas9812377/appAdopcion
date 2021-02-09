@@ -8,6 +8,7 @@ import { PerrosPorFundacionPageRoutingModule } from './perros-por-fundacion-rout
 
 import { PerrosPorFundacionPage } from './perros-por-fundacion.page';
 import { PipesModule } from '../../pipes/pipes.module';
+import { ComponentesModule } from '../../componentes/componentes.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { PipesModule } from '../../pipes/pipes.module';
     FormsModule,
     IonicModule,
     PerrosPorFundacionPageRoutingModule,
-    PipesModule
+    PipesModule,
+    ComponentesModule
   ],
   declarations: [PerrosPorFundacionPage]
 })

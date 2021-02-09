@@ -11,12 +11,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { PipesModule } from './pipes/pipes.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    HttpClientModule,PipesModule],
+    HttpClientModule,PipesModule,CommonModule],
   providers: [
     StatusBar,
     SplashScreen,

@@ -1,14 +1,7 @@
-<ion-header >
-  <ion-toolbar>
-   <ion-buttons slot="start">
-     <ion-back-button defaultHref="/"></ion-back-button>
-   </ion-buttons>
-   <ion-title>DOG LOF</ion-title>
- </ion-toolbar>
- <ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
-</ion-header>
+<app-header titulo="Home">
+</app-header>
 
-
+<ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
 
 <ion-content>
 <ion-grid>
@@ -24,3 +17,6 @@
       </ion-row>
   </ion-grid>
 </ion-content>
+<app-footer></app-footer>
+
+
