@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { EnvService } from './env.service';
 import { tap } from 'rxjs/operators';
+import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +10,19 @@ import { tap } from 'rxjs/operators';
 export class LogRegService {
   isLoggedIn = false;
   token:any;
-  constructor(private http: HttpClient,private storage: NativeStorage, private env: EnvService) { }
+  constructor(private http: HttpClient,private storage: Storage, private env: EnvService) { }
 
   login(email: String, password: String) {
     return this.http.post(this.env.API_URL + '/login',
       {email: email, password: password}, 
     ).pipe(
       tap(token => {
-        this.storage.setItem('token', token)
+        console.log(token);
+        this.storage.set('nombre', token.usuario.nombre)
+        this.storage.set('apellido', token.usuario.apellido)
+        this.storage.set('email', token.usuario.email)
+        this.storage.set('id', token.usuario._id)
+        this.storage.set('token', token.token)
         .then( 
           () => {
             console.log('Token Stored'); 

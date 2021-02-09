@@ -13,9 +13,8 @@ export class PerrosService {
     return this.http.get(this.env.API_URL+"/perros");
   }
 
-  public postAdoptar(emailF: String, nombreF: String , nombre: String, apellido: String, idPerro: String, correoP: String){
-    console.log("casi envio");  
-    return this.http.post(this.env.API_URL+"/adoptar",{emailF:emailF, nombreF:nombreF , nombre:nombre, apellido:apellido, idPerro:idPerro, correoP:correoP});
+  public postAdoptar(emailF: String, nombreF: String , nombre: String, apellido: String, idPerro: String, correoP: String,id: String){ 
+    return this.http.post(this.env.API_URL+"/adoptar",{emailF:emailF, nombreF:nombreF , nombre:nombre, apellido:apellido, idPerro:idPerro, correoP:correoP,id:id});
   } 
   
   public getPerrosInf(infID){

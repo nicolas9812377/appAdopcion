@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
   login(form: NgForm) {
     this.authService.login(form.value.email, form.value.password).subscribe(
       data => {
-        this.alertService.presentToast("Bienvenido "+JSON.stringify(data.usuario));
+        this.alertService.presentToast("Bienvenido "+ data.usuario.nombre+"\t"+ data.usuario.apellido);
       },
       error => {
         this.alertService.presentToast("Error en credenciales");
