@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { FundacionesService } from 'src/app/services/fundaciones.service';
 
 
@@ -32,5 +32,7 @@ export class PerrosPorFundacionPage implements OnInit {
   buscar(event){
     this.textoBUscar = event.detail.value;
   }
+  
+
 
 }

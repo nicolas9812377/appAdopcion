@@ -23,7 +23,7 @@
 
 <ion-list>
   <ion-item *ngFor="let perro of perros | filtro: textoBUscar">
-    <ion-card>
+    <ion-card (click)="queryParams(perro)">
       <ion-card-header>
         <ion-card-title >{{perro.nombre}}</ion-card-title>
         <ion-card-subtitle >{{perro.edad}}</ion-card-subtitle>

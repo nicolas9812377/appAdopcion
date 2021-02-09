@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class EnvService {
   //API_URL = 'https://prueba-suin.herokuapp.com';
-  API_URL = 'http://localhost:3000';
+  API_URL = 'https://prueba-suin.herokuapp.com';
   constructor() { }
 }
