@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AdoptarPageRoutingModule } from './adoptar-routing.module';
 
 import { AdoptarPage } from './adoptar.page';
+import { ComponentesModule } from '../../componentes/componentes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AdoptarPageRoutingModule
+    AdoptarPageRoutingModule,
+    ComponentesModule
   ],
   declarations: [AdoptarPage]
 })

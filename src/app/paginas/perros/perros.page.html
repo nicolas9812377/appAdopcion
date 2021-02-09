@@ -1,11 +1,7 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>DOG LOF</ion-title>
-    </ion-toolbar>
-    <ion-searchbar animated (ionChange)="buscar($event)" placeholder="Buscar"></ion-searchbar>
-</ion-header>
+<app-header titulo="Home">
+</app-header>
 
-
+<ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
 
 <ion-content>
     <ion-list>
@@ -32,3 +28,4 @@
     </ion-list>
 
 </ion-content>
+<app-footer></app-footer>

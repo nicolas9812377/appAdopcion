@@ -9,16 +9,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { PipesModule } from './pipes/pipes.module';
-import { IonicStorageModule } from '@ionic/storage';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    HttpClientModule,PipesModule,
-    IonicStorageModule.forRoot()],
+    HttpClientModule,PipesModule,CommonModule],
   providers: [
     StatusBar,
     SplashScreen,

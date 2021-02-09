@@ -1,11 +1,5 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/fundaciones"></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{data.nombre}}</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo={{data.nombre}}>
+</app-header>
 
 <ion-content>
   <ion-card>
@@ -29,7 +23,7 @@
 
 <ion-list>
   <ion-item *ngFor="let perro of perros | filtro: textoBUscar">
-    <ion-card>
+    <ion-card (click)="queryParams(perro)">
       <ion-card-header>
         <ion-card-title >{{perro.nombre}}</ion-card-title>
         <ion-card-subtitle >{{perro.edad}}</ion-card-subtitle>
@@ -46,3 +40,4 @@
 </ion-list>
 
 </ion-content>
+<app-footer></app-footer>
