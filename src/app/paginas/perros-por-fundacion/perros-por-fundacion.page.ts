@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras } from '@angular/router';
 import { FundacionesService } from 'src/app/services/fundaciones.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perros-por-fundacion',
@@ -12,7 +12,7 @@ export class PerrosPorFundacionPage implements OnInit {
   data: any;
   perros:any;
   textoBUscar='';
-  constructor(private route :ActivatedRoute,private DatosServicio:FundacionesService) {
+  constructor(public route :ActivatedRoute,private DatosServicio:FundacionesService,private router:Router) {
     this.route.queryParams.subscribe(params=>{
       if (params && params.fundacion) {
         this.data = JSON.parse(params.fundacion);
@@ -32,7 +32,15 @@ export class PerrosPorFundacionPage implements OnInit {
   buscar(event){
     this.textoBUscar = event.detail.value;
   }
-  
 
+  queryParams(param){
+    const datos: NavigationExtras={
+      queryParams:{
+        perro:JSON.stringify(param)
+        
+      }
+    }
 
+    this.router.navigate(["/adoptar"],datos);
+  }
 }

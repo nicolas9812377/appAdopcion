@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PerrosService } from '../../services/perros.service';
 import { NavigationExtras, Router } from '@angular/router';
 import { FundacionesService } from '../../services/fundaciones.service';
-import { async } from '@angular/core/testing';
-import { element } from 'protractor';
+
 @Component({
   selector: 'app-perros',
   templateUrl: './perros.page.html',
@@ -51,7 +50,7 @@ queryParams(param){
       
     }
   }
-  console.log(datos)
+  
   this.router.navigate(["/adoptar"],datos);
 }
     
