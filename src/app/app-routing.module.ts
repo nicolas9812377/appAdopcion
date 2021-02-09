@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'carga',
+    redirectTo: 'carga',   
     pathMatch: 'full'
   },
   {
@@ -26,17 +26,17 @@ const routes: Routes = [
   {
     path: 'perros-por-fundacion',
     loadChildren: () => import('./paginas/perros-por-fundacion/perros-por-fundacion.module').then( m => m.PerrosPorFundacionPageModule)
-  },
+  }, 
   {
     path: 'perros',
     loadChildren: () => import('./paginas/perros/perros.module').then( m => m.PerrosPageModule)
-  },  {
+  },
+  {
     path: 'adoptar',
     loadChildren: () => import('./paginas/adoptar/adoptar.module').then( m => m.AdoptarPageModule)
   },
-
-
 ];
+
 
 @NgModule({
   imports: [
@@ -45,3 +45,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+ 

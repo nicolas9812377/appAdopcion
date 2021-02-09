@@ -9,9 +9,9 @@ import { NavigationExtras, Router } from '@angular/router';
   selector: 'app-fundaciones',
   templateUrl: './fundaciones.page.html',
   styleUrls: ['./fundaciones.page.scss'],
-})
+}) 
 export class FundacionesPage implements OnInit {
-
+     
   
   fundaciones:any
   textoBUscar='';
@@ -20,7 +20,7 @@ export class FundacionesPage implements OnInit {
   ngOnInit() {
     this.DatosServicio.getFundaciones()
     .subscribe(
-      (data)=>{this.fundaciones = data.fundacion ;},
+      (data)=>{this.fundaciones = data.fundacion ;},         
       (error)=>{console.error(error);}
     )
   }

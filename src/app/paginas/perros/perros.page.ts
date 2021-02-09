@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PerrosService } from '../../services/perros.service';
 import { NavigationExtras, Router } from '@angular/router';
+import { FundacionesService } from '../../services/fundaciones.service';
+import { async } from '@angular/core/testing';
+import { element } from 'protractor';
 @Component({
   selector: 'app-perros',
   templateUrl: './perros.page.html',
@@ -8,15 +11,33 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class PerrosPage implements OnInit {
   perros:any;
+  fundaciones = [];
   textoBUscar='';
-  constructor(private DataService:PerrosService,private router:Router) { }
+  constructor(private DataService:PerrosService,private fundacionS:FundacionesService,private router:Router) { }
 
-  ngOnInit() {
+ async ngOnInit() {
+    this.fundacionS.getFundaciones().subscribe(
+      (data)=>{
+        // console.log(data.fundacion);
+        data.fundacion.forEach(async(element,index) => {
+          await this.fundacionS.getPerrosFundaciones(element._id).subscribe(
+            async (dat)=>{
+              await this.fundaciones.push({element,dat}); 
+            }
+          );
+        });
+        console.log(this.fundaciones);      
+      },         
+      (error)=>{console.error(error);}
+    );
+
+    /*
     this.DataService.getPerros()
     .subscribe(
-      (data)=>{this.perros = data.perro ;},
+      (data)=>{this.perros = data.perro ;console.log(data.perro);},
       (error)=>{console.error(error);}
     )
+    */
  }
 
  buscar(event){

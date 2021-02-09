@@ -18,9 +18,9 @@ export class LogRegService {
     ).pipe(
       tap(token => {
         this.storage.setItem('token', token)
-        .then(
+        .then( 
           () => {
-            console.log('Token Stored');
+            console.log('Token Stored'); 
           },
           error => console.error('Error storing item', error)
         );
